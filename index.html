@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> age check </title>
+</head>
+
+<body>
+    
+    <form onsubmit="AgeCheck(event)">
+        Enter Your age:
+        <input id="ageInput" type="number" required step="0.01">
+        <br>
+        <button>Check</button>
+    </form>
+
+    <h1 id="resultWindow"></h1>
+
+    <script>
+        function AgeCheck(event) {
+
+            event.preventDefault();
+            let ageInput = document.querySelector("#ageInput").value;
+            ageInput = Number(ageInput);
+
+            console.log(ageInput);
+
+            let message = "";
+
+            if (ageInput > 0 && ageInput <= 15) {
+                message = "you are Teen Boy "
+            } 
+
+            else if (ageInput > 15 && ageInput <= 26){
+                message = "your are young man "
+            }
+                else  {message="your are old"
+                }
+
+            document.querySelector("#resultWindow").innerHTML = message;
+            }
+
+    </script>
+</body>
+
+</html>
